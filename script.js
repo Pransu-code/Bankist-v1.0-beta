@@ -75,22 +75,67 @@ const account1 = {
     });
   };
 
-  displayMovements(account1.movements);
+  // displayMovements(account1.movements);
 
   const calcDisplaySummary = function(movements) {
     
     const incomes = movements.filter(mov => mov > 0).reduce((acc,mov) => acc+mov,0);
     console.log(incomes);
-    labelSumIn.textContent = `${incomes}`;
+    labelSumIn.textContent = `${incomes}$`;
     
   
   
     const out = movements.filter(mov => mov<0).reduce((acc,mov)=> acc+mov, 0);
 
-    labelSumOut.textContent = `${Math.abs(out)}`;
+    labelSumOut.textContent = `${Math.abs(out)}$`;
 
     const interest = movements.filter(mov => mov > 0).map(deposit => (deposit*1.2)/100).reduce((acc,mov) => acc+mov,0);
 
-    labelSumInterest.textContent = `${interest}`;
+    labelSumInterest.textContent = `${interest}%`;
   }
-calcDisplaySummary(account1.movements);
+// calcDisplaySummary(account1.movements);
+
+
+// const arr = [10,20,30,40];
+
+// const calcAverageAge = arr.reduce((acc,mov,i,arr)=> acc+mov / arr.length,0);
+ 
+// console.log(calcAverageAge);
+
+const displayBalance = function(movements){
+  const balance = movements.reduce((acc,mov) => acc+mov,0);
+  labelBalance.textContent = `${balance}$`;
+}
+
+
+const createUsernames = function(acc) {
+  acc.forEach(function(accs){
+    accs.username = accs.owner.toLowerCase().split(' ').map(names=>names[0]).join('');
+    
+  })
+}
+
+createUsernames(accounts);
+// console.log(accounts);
+//event handlers
+let currentAccount;
+
+btnLogin.addEventListener('click', function(e){
+  e.preventDefault();
+  // console.log('Login');
+  
+  currentAccount = accounts.find(acc => acc.username===inputLoginUsername.value);
+console.log(currentAccount);
+
+if(currentAccount?.pin === Number(inputLoginPin.value)) {
+  labelWelcome.textContent = `Welcome back ${currentAccount.owner.split(' ')[0]}`;
+
+  containerApp.style.opacity = 100;
+  displayMovements(currentAccount.movements);
+  calcDisplaySummary(currentAccount.movements);
+  displayBalance(currentAccount.movements);
+
+}
+
+
+})
