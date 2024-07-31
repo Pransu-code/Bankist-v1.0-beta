@@ -20,5 +20,5 @@ Link to the live demo -> https://fund-fusion.netlify.app/
 
 
 # Screenshots
-<!-- https://postimg.cc/NyLTDprP -->
-<!-- https://postimg.cc/n9vnqjYh -->
+[!Login page](https://postimg.cc/NyLTDprP)
+[!Home page](https://postimg.cc/n9vnqjYh)
