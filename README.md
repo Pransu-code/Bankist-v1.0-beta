@@ -2,9 +2,12 @@
 
 # Screenshots
 Login Page ->
-![Login page](https://postimg.cc/NyLTDprP)
+
+![](https://postimg.cc/NyLTDprP)
+
 Home Page ->
-![Home page](https://postimg.cc/n9vnqjYh)
+
+![](https://postimg.cc/n9vnqjYh)
 
 # Demo
 Link to the live demo -> https://fund-fusion.netlify.app/
