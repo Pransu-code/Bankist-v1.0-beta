@@ -7,7 +7,7 @@ Login Page ->
 
 Home Page ->
 
-![](https://postimg.cc/n9vnqjYh)
+![Home Page](https://www.imghippo.com/i/u4Qnr1722416286.png)
 
 # Demo
 Link to the live demo -> https://fund-fusion.netlify.app/
