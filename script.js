@@ -83,6 +83,7 @@
         const day = `${date.getDate()}`.padStart(2,0);
         const month = `${date.getMonth() + 1}`.padStart(2,0);
         const year = `${date.getFullYear()}`; 
+       
 
         const displayDate = `${day}/${month}/${year}`;
         
@@ -94,7 +95,7 @@
           <div class="movements__value">${mov}</div>
         </div>
         `;
-        
+        // labelDate.textContent = `${displayDate}`;
         containerMovements.insertAdjacentHTML('afterbegin',html);
     });
   };
@@ -180,13 +181,24 @@ const startLogoutTimer = function(){
    
 };
   //call timer every second
-  let time = 120;
+  let time = 600;
   tick();
   const timer = setInterval(tick,1000);
   return timer;
 }
 
 let currentAccount,timerr;
+
+
+//current date and time
+
+let now = new Date();
+const day = `${now.getDate()}`.padStart(2,0);
+const month = `${now.getMonth() + 1}`.padStart(2,0);
+const year = `${now.getFullYear()}`; 
+let hour = now.getHours();
+let min = now.getMinutes();
+labelDate.textContent = `As of ${day}/${month}/${year},${hour}:${min}`;
 
 btnLogin.addEventListener('click', function(e){
   e.preventDefault();
@@ -263,7 +275,7 @@ btnLoan.addEventListener("click", function (e) {
     amount > 0 &&
     currentAccount.movements.some((mov) => mov >= amount * 0.1)
   ) {
-    // setTimeout(function () {
+    setTimeout(function () {
       // Add movement
       currentAccount.movements.push(amount);
 
@@ -274,9 +286,9 @@ btnLoan.addEventListener("click", function (e) {
       updateUi(currentAccount);
 
       // Reset timer
-    //   clearInterval(timer);
-    //   timer = startLogOutTimer();
-    // }, 2500);
+      clearInterval(timerr);
+      timerr = startLogoutTimer();
+    }, 2500);
   }
   inputLoanAmount.value = "";
 });
