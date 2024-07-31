@@ -1,14 +1,14 @@
 # FundFusion
 
-![home](https://www.imghippo.com/i/u4Qnr1722416286.png)
+
 # Screenshots
-Login Page ->
+Login Page
 
-![](https://postimg.cc/NyLTDprP)
+![Login](assets/Login.png)
 
-Home Page ->
+Home Page
 
-![Home Page](https://www.imghippo.com/i/u4Qnr1722416286.png)
+![Home Page](assets/Home.png)
 
 # Demo
 Link to the live demo -> https://fund-fusion.netlify.app/
