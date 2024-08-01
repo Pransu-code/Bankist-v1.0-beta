@@ -28,4 +28,5 @@ Fundfusion is a feature-rich banking application that allows users to manage the
 HTML
 CSS
 JavaScript
+Netlify
 
